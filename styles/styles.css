@@ -1,0 +1,12 @@
+body {
+	background: #ececec;
+}
+
+.navbar {
+	background-color: #3F51B5;
+}
+
+.form-control {
+    border-radius: 0;
+} 
+
