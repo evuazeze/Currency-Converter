@@ -34,13 +34,12 @@ class IndexController {
   registerServiceWorker() {
     if (!navigator.serviceWorker) return;
 
-    var indexController = this;
+    let indexController = this;
 
     navigator.serviceWorker.register('../sw.js').then(function(reg) {
       if (!navigator.serviceWorker.controller) {
         return;
       }
-
       if (reg.waiting) {
         indexController.updateReady(reg.waiting);
         return;
@@ -76,21 +75,18 @@ trackInstalling(worker) {
 }
 
 updateReady(worker) {
-  // var toast = this._toastsView.show("New version available", {
-  //   buttons: ['refresh', 'dismiss']
-  // });
 
-  // toast.answer.then(function(answer) {
-  //   if (answer != 'refresh') return;
-  //   worker.postMessage({action: 'skipWaiting'});
-  // });
-  // notify user with toast
-  console.log("notified!");
-}
+  if (!confirm("Update Exchange Rates!")) return;
 
-getCurrencies() {
-  return this.model.currencies;
-}
+  worker.postMessage({action: 'skipWaiting'});
+  
+    // document.getElementById("demo").innerHTML = txt;
+
+  }
+
+  getCurrencies() {
+    return this.model.currencies;
+  }
 
 }
 export { IndexController };
