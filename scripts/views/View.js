@@ -1,5 +1,3 @@
-import { IndexController } from '/scripts/IndexController.js';
-
 class View {
 	constructor(container, currencies) {
     let view = this;

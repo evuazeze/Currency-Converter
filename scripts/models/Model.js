@@ -1,6 +1,5 @@
 class Model {
 	constructor() {
-		// this.currencies();
 	}
 
 	get(url) {

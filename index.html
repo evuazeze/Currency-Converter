@@ -2,89 +2,87 @@
 <html lang="en">
 
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
-    <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title>Currency Converter</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <title>Currency Converter</title>
 
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="./bootstrap-4.1.1-dist/css/bootstrap.min.css">
-    <link href="./styles/styles.css" rel="stylesheet">
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+  <link href="./styles/styles.css" rel="stylesheet">
 </head>
 
 <body>
 
-    <header>
-        <div>
-            <nav class="navbar navbar-dark shadow">
-              <span class="navbar-brand mb-0 h1">Currency Converter</span>
-          </nav>
-      </div>
+  <header>
+    <div>
+      <nav class="navbar navbar-dark shadow">
+        <span class="navbar-brand mb-0 h1">Currency Converter</span>
+      </nav>
+    </div>
   </header>
 
   <div class="vertical-center">
-      <div id="main" class="container">
-        <div class="row justify-content-center">
-            <div class="card text-center shadow mt-4">
-                <div class="card-body">
-                    <form id="currency-form">
-                      <div class="form-row">
-                          <label class="sr-only" for="amount-input">Enter amount</label>
-                          <div class="col-12 mb-2">
-                              <input type="number" class="form-control" id="amount-input" placeholder="Enter amount">
-                          </div>
-                          <div class="col-12 mb-2">
-                              <div class="input-group-append">
-                                <select id="from-currency" class="form-control">
-                                </select>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="form-row">
-                        <div class="col-6 offset-3">
-                          <label class="form-control bg-light">To</label>
-                      </div>
-                  </div>
-
-                  <div class="form-row">
-                   <div class="col-12 mb-2">
-                    <select id="to-currency" class="form-control">
-                    </select>
+    <div id="main" class="container">
+      <div class="row justify-content-center">
+        <div class="card text-center shadow mt-4">
+          <div class="card-body">
+            <form id="currency-form">
+              <div class="form-row">
+                <label class="sr-only" for="amount-input">Enter amount</label>
+                <div class="col-12 mb-2">
+                  <input type="number" class="form-control" id="amount-input" placeholder="Enter amount">
                 </div>
+                <div class="col-12 mb-2">
+                  <div class="input-group-append">
+                    <select id="from-currency" class="form-control">
+                    </select>
+                  </div>
+                </div>
+              </div>
+
+              <div class="form-row">
+                <div class="col-6 offset-3">
+                  <label class="form-control bg-light">To</label>
+                </div>
+              </div>
+
+              <div class="form-row">
+               <div class="col-12 mb-2">
+                <select id="to-currency" class="form-control">
+                </select>
+              </div>
             </div>
 
             <div class="form-row">
-                <div class="col-6 offset-3 mb-2">
-                   <button type="submit" class="btn btn-primary shadow">
-                    Convert
-                </button>
+              <div class="col-6 offset-3 mb-2">
+               <button type="submit" class="btn btn-primary shadow">
+                Convert
+              </button>
             </div>
-        </div>
+          </div>
 
-        <div class="form-row">
+          <div class="form-row">
             <div class="col-12">
-                <input id="amount-output" class="form-control" type="text" placeholder="Press Convert button" readonly>
+              <input id="amount-output" class="form-control" type="text" placeholder="Press Convert button" readonly>
 
 
             </div>
-        </div>
+          </div>
 
-    </form>
-</div>
+        </form>
+      </div>
 <!--   <div class="card-footer text-muted">
     2 days ago
-</div> -->
+  </div> -->
 </div>
 </div>
 </div>
 </div>
 
 </div>
-
-<!-- Bootstrap JS. -->
-<script src="./bootstrap-4.1.1-dist/js/bootstrap.min.js"></script>
-
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 <script type="module" src="./scripts/main.js"></script>
 <script type="module" src="./scripts/IndexController.js"></script>
 <script type="module" src="./scripts/views/View.js"></script>

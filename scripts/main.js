@@ -15,15 +15,6 @@ import { IndexController } from './IndexController.js';
 // loadScripts(polyfillsNeeded, function() {
 //   new IndexController(document.querySelector('.main'));
 // });
-    // this.form = document.querySelector('#currency-form');
-    // this.fromCurrency = document.querySelector('#from-currency');
-    // this.toCurrency = document.querySelector('#to-currency');
-    // this.amountEnteredInput = document.querySelector('#amount-input');
-    // this.amountOutputField = document.querySelector('#amount-output');
-
-    //     this.toCurrency.value = "hello";
-    // this.toCurrency.value = "hello";
-
 
 new IndexController(document.querySelector('#main'));
 // })();
