@@ -1,6 +1,5 @@
 import { Model } from './models/Model.js';
 import { View } from './views/View.js';
-// import { CurrencyIDB } from './idb/CurrencyIDB.js'; 
 import { CurrencyIDB } from './idb/CurrencyIDB.js'; 
 
 class IndexController {
@@ -13,49 +12,30 @@ class IndexController {
     controller.form = container.querySelector('#currency-form');
 
     controller.model = new Model();
-    controller.currencies = this.model.currencies();
+    controller.currencies = controller.model.currencies();
     controller.currencyIDB = new CurrencyIDB();
 
     controller.currencyIDB.saveCurrencies(controller.currencies);
-    controller.view = new View(container, /*controller.currencyIDB.getCachedCurrencies()*/controller.currencies);
+    controller.view = new View(container, controller.currencies);
     
     controller.form.addEventListener('submit', function (e) {
      e.preventDefault();
 
-     controller.currencyIDB.saveConversionRate(controller.view.getCurrenciesToConvert(), controller.model.getConversionRate(controller.view.getCurrenciesToConvert()))
-     controller.view.setConvertedAmount(controller.view.getAmountEntered(), controller.currencyIDB.getCachedConversionRate(controller.view.getCurrenciesToConvert()));
+     controller.currencyIDB.saveConversionRate(controller.view.getCurrenciesToConvert(), controller.model.getConversionRate(controller.view.getCurrenciesToConvert()));
+     controller.currencyIDB.getCachedConversionRate(controller.view.getCurrenciesToConvert())
+     .then(function(rate) {
+      return rate;
+    })
+     .then(function(rate) {
+      if (rate > 0) {
+       controller.view.setConvertedAmount(controller.view.getAmountEntered(), controller.currencyIDB.getCachedConversionRate(controller.view.getCurrenciesToConvert()));
 
-// if (typeof controller.currencyIDB.getCachedConversionRate(controller.view.getCurrenciesToConvert()) == 'undefined') {
-//   console.log("not there");
-// }
-// controller.currencyIDB.getCachedConversionRate(controller.view.getCurrenciesToConvert())
-// .then(function(rate) {
-//   // console.log(rate);
-//   // return rate;
-//   console.log(rate);
-//   controller.view.setConvertedAmount(controller.view.getAmountEntered(), rate);
-//   return rate;
-// })
-// .catch(function(rate) {
-//   let rate = controller.model.getConversionRate(controller.view.getCurrenciesToConvert());
-//   console.log(rate);
-//   controller.currencyIDB.saveConversionRate(controller.view.getCurrenciesToConvert(), rate);
-//   controller.view.setConvertedAmount(controller.view.getAmountEntered(), rate);
-// })
-// .then(function(rate) {
-//  controller.view.setConvertedAmount(controller.view.getAmountEntered(), rate);
-})
+     } else {
+       controller.view.setConvertedAmount(controller.view.getAmountEntered(), controller.model.getConversionRate(controller.view.getCurrenciesToConvert()));
 
-// .then(function(rate) {
-//   controller.view.setConvertedAmount(controller.view.getAmountEntered(), rate);
-// });
-    // .catch(e => requestError(e, 'image'));
-
-    // function requestError(e, part) {
-    //   console.log(e);
-    //   responseContainer.insertAdjacentHTML('beforeend', `<p class="network-warning">Oh no! There was an error making a request for the ${part}.</p>`);
-    // }
-  // });
+     }
+   })
+   })
   }
 
   registerServiceWorker() {
@@ -106,8 +86,6 @@ updateReady(worker) {
   if (!confirm("Update Exchange Rates!")) return;
 
   worker.postMessage({action: 'skipWaiting'});
-
-    // document.getElementById("demo").innerHTML = txt;
 
   }
 

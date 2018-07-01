@@ -259,7 +259,7 @@
       		callback(request.result);
       	};
       };
-  });
+    });
   });
 
   // polyfill getAll
@@ -397,51 +397,35 @@ saveCurrencies(currencies) {
 	});
 }
 
-// saveConversionRate(selectedCurrencies, conversionRate) {
-// 	let currencyidb = this;
-// 	currencyidb.conversionRateStore(selectedCurrencies, conversionRate);
-// }
-    // limit store to 30 items
-    // store.index('by-date').openCursor(null, "prev").then(function(cursor) {
-    // 	return cursor.advance(30);
-    // }).then(function deleteRest(cursor) {
-    // 	if (!cursor) return;
-    // 	cursor.delete();
-    // 	return cursor.continue().then(deleteRest);
-    // });
+getCachedCurrencies() {
+ let currencyidb = this;
 
-    getCachedCurrencies() {
-    	let currencyidb = this;
+ return currencyidb.dbCurrenciesPromise.then(function(db) {
 
-    	return currencyidb.dbCurrenciesPromise.then(function(db) {
+  let index = db.transaction('currencies').objectStore('currencies').index('by-countries');
 
-    		let index = db.transaction('currencies').objectStore('currencies').index('by-countries');
+  return index.getAll()
+  .then(function(currencies) {
+   return currencies;
+ });
+});
+}
 
-    		return index.getAll()
-    		.then(function(currencies) {
-    			return currencies;
-    		});
-    	});
-    }
+getCachedConversionRate(selectedCurrencies) {
+ let currencyidb = this;
 
-    getCachedConversionRate(selectedCurrencies) {
-    	let currencyidb = this;
-    	// console.log(selectedCurrencies);
+ return currencyidb.dbCurrenciesPromise
+ .then(function(db) {
+  let index = db.transaction('conversion_rates').objectStore('conversion_rates');
 
-    	return currencyidb.dbCurrenciesPromise
-    	.then(function(db) {
-    		let index = db.transaction('conversion_rates').objectStore('conversion_rates');
-
-    		return index.get(selectedCurrencies);
-    	})
-    	.then(function(conversionRate) {
-    		return conversionRate;
-    	})
-    }
+  return index.get(selectedCurrencies);
+})
+ .then(function(conversionRate) {
+  return conversionRate;
+})
+}
 
 
 }
 
-// export { CurrencyIDB };
-// let currencyIDB = new CurrencyIDB();
 export { CurrencyIDB }
