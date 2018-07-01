@@ -17,7 +17,7 @@ class IndexController {
     controller.currencyIDB = new CurrencyIDB();
 
     controller.currencyIDB.saveCurrencies(controller.currencies);
-    controller.view = new View(container, controller.currencyIDB.getCachedCurrencies());
+    controller.view = new View(container, /*controller.currencyIDB.getCachedCurrencies()*/controller.currencies);
     
     controller.form.addEventListener('submit', function (e) {
      e.preventDefault();

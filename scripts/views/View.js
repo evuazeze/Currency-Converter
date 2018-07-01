@@ -6,12 +6,32 @@ class View {
     
     view.fromCurrency = container.querySelector('#from-currency');
     view.toCurrency = container.querySelector('#to-currency');
+console.log(currencies);
+    // currencies
+    // .then(function(currencies) {
+    //   currencies.forEach(function(currency){
+    //     const currencyID = currency.id;
+    //     const currencyName = currency.currencyName;
+
+        // let opt1 = document.createElement('option');
+        // let opt2 = document.createElement('option');
+        // opt1.innerHTML = currencyName + ' (' + currencyID + ')';
+        // opt1.setAttribute("id", currencyID);
+        // opt2.innerHTML = currencyName + ' (' + currencyID + ')';
+        // opt2.setAttribute("id", currencyID);
+
+        // view.container.querySelector('#from-currency').appendChild(opt1);
+        // view.container.querySelector('#to-currency').appendChild(opt2);
+    //   })
 
     currencies
     .then(function(currencies) {
-      currencies.forEach(function(currency){
-        const currencyID = currency.id;
-        const currencyName = currency.currencyName;
+      return currencies;
+    })
+    .then(function(currencies) {
+      for (let key in currencies) {
+        const currencyID = currencies[key].id;
+        const currencyName = currencies[key].currencyName;
 
         let opt1 = document.createElement('option');
         let opt2 = document.createElement('option');
@@ -22,8 +42,12 @@ class View {
 
         view.container.querySelector('#from-currency').appendChild(opt1);
         view.container.querySelector('#to-currency').appendChild(opt2);
-      })
+
+      }
     })
+
+
+    // })
   }
 
   getCurrenciesToConvert() {
