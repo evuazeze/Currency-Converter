@@ -1,6 +1,7 @@
 // (function () {
 // import loadScripts from '../utils/loadScripts';
 import { IndexController } from './IndexController.js';
+// import { CurrencyIDB } from './idb/CurrencyIDB.js'; 
 
 // const polyfillsNeeded = [];
 // if (!('Promise' in self)) polyfillsNeeded.push('/js/polyfills/promise.js');
@@ -15,6 +16,7 @@ import { IndexController } from './IndexController.js';
 // loadScripts(polyfillsNeeded, function() {
 //   new IndexController(document.querySelector('.main'));
 // });
+// new CurrencyIDB();
 
 new IndexController(document.querySelector('#main'));
 // })();

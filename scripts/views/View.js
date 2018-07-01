@@ -9,10 +9,7 @@ class View {
 
     currencies
     .then(function(currencies) {
-      return Object.values(currencies)
-    })
-    .then(function(currency) {
-      currency.forEach(function(currency){
+      currencies.forEach(function(currency){
         const currencyID = currency.id;
         const currencyName = currency.currencyName;
 
@@ -45,8 +42,19 @@ class View {
     return this.container.querySelector('#amount-input').value;
   }
 
-  setConvertedAmount(amount) {
-    this.container.querySelector('#amount-output').value = amount;
+  setConvertedAmount(amount, conversionRate) {
+    let view = this;
+
+    // console.log(conversionRate);
+
+    conversionRate
+    .then(function(conversionRate) {
+      return conversionRate;
+    })
+    .then(function(conversionRate) {
+      view.container.querySelector('#amount-output').value = amount * conversionRate;
+    })
+    // this.container.querySelector('#amount-output').value = amount;
   }
 
 }
