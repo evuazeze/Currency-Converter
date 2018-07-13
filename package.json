@@ -1,0 +1,27 @@
+{
+  "name": "currency-converter",
+  "version": "1.0.0",
+  "description": "The final project of the first phase of Google Africa Challenge Scholarship",
+  "main": "index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/evuazeze/Currency-Converter.git"
+  },
+  "keywords": [
+    "progressive-web-app",
+    "offline-capable-app",
+    "offline-currency-converter",
+    "google-udacity-scholars",
+    "alc-with-google",
+    "google-africa"
+  ],
+  "author": "Evuazeze Emmanuel Oghenewegba",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/evuazeze/Currency-Converter/issues"
+  },
+  "homepage": "https://github.com/evuazeze/Currency-Converter#readme"
+}
