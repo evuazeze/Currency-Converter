@@ -2,11 +2,25 @@ body {
 	background: #ececec;
 }
 
-.navbar {
-	background-color: #3F51B5;
+.jumbotron {
+	background-color: #31C167;
 }
 
 .form-control {
     border-radius: 0;
-} 
+}
+
+.bg-converter {
+	background-color: #959595
+}
+
+.navbar {
+	background-color: #BBBABA
+}
+
+.footer {
+	background-color: #D8D8D8
+	margin: 0px auto;
+	padding: 20px 0px 20px 0px;
+}
 

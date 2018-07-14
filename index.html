@@ -8,7 +8,7 @@
   <title>Currency Converter</title>
 
   <!-- Bootstrap CSS -->
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
 
   <link href="./styles/styles.css" rel="stylesheet">
 </head>
@@ -17,8 +17,15 @@
 
   <header>
     <div>
-      <nav class="navbar navbar-dark shadow">
-        <span class="navbar-brand mb-0 h1">Currency Converter</span>
+      <nav class="navbar navbar-dark">
+        <div class="container">
+          <div class="row">
+            <div class="col-12">
+              <h1>Currency Converter</h1>
+              <p><strong>Perform your frequent conversions offline</strong></p>
+            </div>
+          </div>
+        </div>
       </nav>
     </div>
   </header>
@@ -26,8 +33,11 @@
   <div class="vertical-center">
     <div id="main" class="container">
       <div class="row justify-content-center">
-        <div class="card text-center shadow mt-4">
+        <div class="col-12 col-sm-10 col-lg-8">
+        <div class="card text-center mt-5 mb-5">
+          <h3 class="card-header bg-converter text-white">Currency Converter</h3>
           <div class="card-body">
+
             <form id="currency-form">
               <div class="form-row">
                 <label class="sr-only" for="amount-input">Enter amount</label>
@@ -66,27 +76,29 @@
           <div class="form-row">
             <div class="col-12">
               <input id="amount-output" class="form-control" type="text" placeholder="Press Convert button" readonly>
-
-
             </div>
           </div>
-
         </form>
+
       </div>
-<!--   <div class="card-footer text-muted">
-    2 days ago
-  </div> -->
+</div>
 </div>
 </div>
 </div>
 </div>
 
 </div>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 <script type="module" src="./scripts/main.js"></script>
-<script type="module" src="./scripts/IndexController.js"></script>
-<script type="module" src="./scripts/views/View.js"></script>
 
 </body>
 
+<footer class="footer">
+  <div class="container-fluid">
+  <div class="row justify-content-center">          
+    <div class="col-auto">
+      <p><strong>Inspired by Andela Google Udacity</strong></p>
+    </div>
+  </div>
+</div>
+</footer>
 </html>
