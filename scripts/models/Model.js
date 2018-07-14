@@ -20,8 +20,7 @@ export default class Model {
 	}
 
 	getConversionRate(currenciesToConvertStr) {
-		return this.getJSON('https://free.currencyconverterapi.com/api/v5/convert?q='
-			+ currenciesToConvertStr + '&compact=ultra')
+		return this.getJSON(`https://free.currencyconverterapi.com/api/v5/convert?q=${currenciesToConvertStr}&compact=ultra`)
 		.then(exchangeRateObject => Object.values(exchangeRateObject)[0])
 		.then(function(conversionRate) {
 			return conversionRate;

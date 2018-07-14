@@ -1,6 +1,6 @@
 import Model from './models/Model.js';
 import View from './views/View.js';
-import CurrencyIDB from './idb/CurrencyIDB.js'; 
+import CurrencyIDB from './idb/CurrencyIDB.js';
 
 export default class Controller {
 
