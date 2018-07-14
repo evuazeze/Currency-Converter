@@ -15,7 +15,8 @@ self.addEventListener('install', function(event) {
         'scripts/Controller.js',
         'scripts/idb/CurrencyIDB.js',
         'styles/styles.css',
-        'https://free.currencyconverterapi.com/api/v5/currencies'
+        'https://free.currencyconverterapi.com/api/v5/currencies',
+        'https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css'
       ]);
     })
   );
