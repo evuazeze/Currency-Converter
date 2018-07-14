@@ -1,4 +1,4 @@
-class View {
+export default class View {
 	constructor(container, currencies) {
     let view = this;
 
@@ -12,6 +12,9 @@ class View {
       return currencies;
     })
     .then(function(currencies) {
+      const fragment1 = document.createDocumentFragment();
+      const fragment2 = document.createDocumentFragment();
+
       for (let key in currencies) {
         const currencyID = currencies[key].id;
         const currencyName = currencies[key].currencyName;
@@ -22,11 +25,13 @@ class View {
         opt1.setAttribute("id", currencyID);
         opt2.innerHTML = currencyName + ' (' + currencyID + ')';
         opt2.setAttribute("id", currencyID);
-
-        view.container.querySelector('#from-currency').appendChild(opt1);
-        view.container.querySelector('#to-currency').appendChild(opt2);
-
+        fragment1.appendChild(opt1);
+        fragment2.appendChild(opt2);
       }
+
+        view.container.querySelector('#from-currency').appendChild(fragment1);
+        view.container.querySelector('#to-currency').appendChild(fragment2);
+        
     })
 
   }
@@ -63,5 +68,3 @@ class View {
   }
 
 }
-
-export { View };

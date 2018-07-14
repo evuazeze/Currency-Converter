@@ -1,8 +1,7 @@
-var staticCacheName = 'currency-static-v49';
-var contentImgsCache = 'jbkjj';
+var staticCacheName = 'currency-static-v51';
 var allCaches = [
-  staticCacheName,
-  contentImgsCache
+  staticCacheName
+  
 ];
 
 self.addEventListener('install', function(event) {
@@ -13,11 +12,10 @@ self.addEventListener('install', function(event) {
         'scripts/main.js',
         'scripts/views/View.js',
         'scripts/models/Model.js',
-        'scripts/IndexController.js',
+        'scripts/Controller.js',
         'scripts/idb/CurrencyIDB.js',
         'styles/styles.css',
-        'https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css',
-        'https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js'
+        'https://free.currencyconverterapi.com/api/v5/currencies'
       ]);
     })
   );

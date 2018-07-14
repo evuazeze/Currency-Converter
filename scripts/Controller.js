@@ -1,8 +1,8 @@
-import { Model } from './models/Model.js';
-import { View } from './views/View.js';
-import { CurrencyIDB } from './idb/CurrencyIDB.js'; 
+import Model from './models/Model.js';
+import View from './views/View.js';
+import CurrencyIDB from './idb/CurrencyIDB.js'; 
 
-class IndexController {
+export default class Controller {
 
   constructor(container) {
     let controller = this;
@@ -15,7 +15,7 @@ class IndexController {
     controller.currencies = controller.model.currencies();
     controller.currencyIDB = new CurrencyIDB();
 
-    controller.currencyIDB.saveCurrencies(controller.currencies);
+    // controller.currencyIDB.saveCurrencies(controller.currencies);
     controller.view = new View(container, controller.currencies);
     
     controller.form.addEventListener('submit', function (e) {
@@ -89,9 +89,4 @@ updateReady(worker) {
 
   }
 
-  getCurrencies() {
-    return this.model.currencies;
-  }
-
 }
-export { IndexController };

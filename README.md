@@ -4,11 +4,9 @@ The final project - Currency Converter of the first phase of Google Africa Chall
 
 ## Setup
 
-### Prerequisites
+### Dependencies:
 
-```
-node.js [version: LTS]
-```
+* [Node.js](https://nodejs.org/en/) v0.12.7 or above
 
 ### Install and Run
 

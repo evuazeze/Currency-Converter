@@ -1,3 +1,3 @@
-import { IndexController } from './IndexController.js';
+import Controller from './Controller.js';
 
-new IndexController(document.querySelector('#main'));
+new Controller(document.querySelector('#main'));
