@@ -1,6 +1,6 @@
 # Currency Converter
 
-The final project - Currency Converter of the first phase of Google Africa Challenge Scholarship
+The final project - [Currency Converter](https://evuazeze.github.io/Currency-Converter/) of the first phase of Google Africa Challenge Scholarship
 
 ## Setup
 
