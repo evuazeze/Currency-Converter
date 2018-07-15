@@ -43,7 +43,7 @@ export default class Controller {
 
     let indexController = this;
 
-    navigator.serviceWorker.register('./sw.js').then(function(reg) {
+    navigator.serviceWorker.register('../sw.js').then(function(reg) {
       if (!navigator.serviceWorker.controller) {
         return;
       }
