@@ -1,8 +1,4 @@
-var staticCacheName = 'currency-static-v59';
-var allCaches = [
-  staticCacheName
-  
-];
+var staticCacheName = 'currency-static-v60';
 
 self.addEventListener('install', function(event) {
   event.waitUntil(
@@ -30,8 +26,7 @@ self.addEventListener('activate', function(event) {
     caches.keys().then(function(cacheNames) {
       return Promise.all(
         cacheNames.filter(function(cacheName) {
-          return cacheName.startsWith('currency-') &&
-                 !allCaches.includes(cacheName);
+          return cacheName.startsWith('currency-');
         }).map(function(cacheName) {
           return caches.delete(cacheName);
         })
