@@ -1,4 +1,4 @@
-var staticCacheName = 'currency-static-v73';
+var staticCacheName = 'currency-static-v77';
 var allCaches = [
   staticCacheName];
 
@@ -13,11 +13,8 @@ self.addEventListener('install', function(event) {
         './scripts/Controller.js',
         './scripts/idb/CurrencyIDB.js',
         './styles/styles.css',
+        './styles/bootstrap.min.css',
         'https://free.currencyconverterapi.com/api/v5/currencies'
-        // 'images/icons/icon-48x48.png',
-        // 'images/icons/icon-96x96.png',
-        // 'images/icons/icon-128x128.png',
-        // 'images/icons/icon-144x144.png'
       ]);
     })
   );
