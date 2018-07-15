@@ -1,4 +1,4 @@
-var staticCacheName = 'currency-static-v66';
+var staticCacheName = 'currency-static-v67';
 var allCaches = [
   staticCacheName];
 
@@ -6,11 +6,11 @@ self.addEventListener('install', function(event) {
   event.waitUntil(
     caches.open(staticCacheName).then(function(cache) {
       return cache.addAll([
-        './'
-        // 'scripts/main.js',
-        // 'scripts/views/View.js',
-        // 'scripts/models/Model.js',
-        // 'scripts/Controller.js',
+        './',
+        './scripts/main.js',
+        './scripts/views/View.js',
+        './scripts/models/Model.js',
+        './scripts/Controller.js'
         // 'scripts/idb/CurrencyIDB.js',
         // 'styles/styles.css',
         // 'https://free.currencyconverterapi.com/api/v5/currencies',
