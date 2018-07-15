@@ -2,7 +2,7 @@
 
 The final project - [Currency Converter](https://evuazeze.github.io/Currency-Converter/) of the first phase of Google Africa Challenge Scholarship
 
-For optimal experience use Google Chrome as all technologies used was manually implemented, therefore they may exists some form of browser quirks with other browsers.
+For optimal experience use Google Chrome as all technologies used was manually implemented and tested on Chrome only, therefore they may exists some form of browser quirks with other browsers.
 
 ## Technologies
 
