@@ -1,4 +1,4 @@
-var staticCacheName = 'currency-static-v55';
+var staticCacheName = 'currency-static-v57';
 var allCaches = [
   staticCacheName
   
@@ -8,18 +8,18 @@ self.addEventListener('install', function(event) {
   event.waitUntil(
     caches.open(staticCacheName).then(function(cache) {
       return cache.addAll([
-        '/',
-        'scripts/main.js',
-        'scripts/views/View.js',
-        'scripts/models/Model.js',
-        'scripts/Controller.js',
-        'scripts/idb/CurrencyIDB.js',
-        'styles/styles.css',
+        './',
+        './scripts/main.js',
+        './scripts/views/View.js',
+        './scripts/models/Model.js',
+        './scripts/Controller.js',
+        './scripts/idb/CurrencyIDB.js',
+        './styles/styles.css',
         'https://free.currencyconverterapi.com/api/v5/currencies',
-        'images/icons/icon-48x48.png',
-        'images/icons/icon-96x96.png',
-        'images/icons/icon-128x128.png',
-        'images/icons/icon-144x144.png'
+        './images/icons/icon-48x48.png',
+        './images/icons/icon-96x96.png',
+        './images/icons/icon-128x128.png',
+        './images/icons/icon-144x144.png'
       ]);
     })
   );
