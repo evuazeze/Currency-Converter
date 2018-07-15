@@ -1,4 +1,4 @@
-var staticCacheName = 'currency-static-v71';
+var staticCacheName = 'currency-static-v72';
 var allCaches = [
   staticCacheName];
 
