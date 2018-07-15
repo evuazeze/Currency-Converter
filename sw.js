@@ -1,4 +1,4 @@
-var staticCacheName = 'currency-static-v65';
+var staticCacheName = 'currency-static-v66';
 var allCaches = [
   staticCacheName];
 
@@ -6,7 +6,7 @@ self.addEventListener('install', function(event) {
   event.waitUntil(
     caches.open(staticCacheName).then(function(cache) {
       return cache.addAll([
-        '/'
+        './'
         // 'scripts/main.js',
         // 'scripts/views/View.js',
         // 'scripts/models/Model.js',
