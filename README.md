@@ -43,7 +43,7 @@ npm start
 
 App is then served on `localhost:3000`
 
-## Inspired by (Andela)[https://andela.com/], (Google)[https://www.google.com/] & (Udacity)[https://www.udacity.com/]
+## Inspired by [Andela](https://andela.com/), [Google](https://www.google.com/) & [Udacity](https://www.udacity.com/)
 
 ## License
 
